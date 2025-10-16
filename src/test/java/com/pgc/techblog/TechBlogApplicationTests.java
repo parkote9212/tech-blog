@@ -1,4 +1,4 @@
-package com.pgc.tech_blog;
+package com.pgc.techblog;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

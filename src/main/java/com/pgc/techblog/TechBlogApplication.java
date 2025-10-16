@@ -1,4 +1,4 @@
-package com.pgc.tech_blog;
+package com.pgc.techblog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
