@@ -5,10 +5,9 @@ import com.pgc.techblog.dto.MemberSignupRequest;
 import com.pgc.techblog.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.*;
 
 
 // REST API를 처리
@@ -30,4 +29,11 @@ public class MemberController {
         String result = memberService.login(request);
         return  ResponseEntity.ok(result);
     }
+
+    @GetMapping("/me")
+    public ResponseEntity<String> getMyInfo(@AuthenticationPrincipal UserDetails userDetails){
+        String email = userDetails.getUsername();
+        return ResponseEntity.ok("인증 성공! 당신의 이메일은 " + email + " 입니다.");
+    }
+
 }

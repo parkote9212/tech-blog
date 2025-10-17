@@ -1,9 +1,12 @@
+server:
+  port: 8081
+
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://localhost:3306/tech_blog # 'techblog'? ??? ??? DB ??
     username: root # MariaDB ??? ??
-    password: 1234 # MariaDB ?? ? ??? ????
+    password: 7305 # MariaDB ?? ? ??? ????
 
   jpa:
     hibernate:
@@ -12,3 +15,10 @@ spring:
       hibernate:
         show_sql: true # JPA? ???? SQL ??? ??? ???
         format_sql: true # SQL ??? ?? ?? ??
+
+        # ... 기존 spring 설정 ...
+
+        # JWT 설정 추가
+jwt:
+  secret: VzFWVTFOSlJJRk5YUlZKTlZtMTRiV3hYUm5kbGJFNVlWVzVvVEZkclpISldSVTEwWkVkS2NHSnFhRk5hVms1b1kyMWFWbFl5YkZOVWJEVnhZVWhhV0dKSFVsaFNiVnBFWVROd2VFMVlNVU5TYkhCUVlURndlRTlVUm5KYVZHd3hWVzEtVEZOR1NuVlpiRkpZV1ZjeGRtRXlUa2hoTVdSV1lVWlNhV0V5V2s1bGJGcHk=
+  expiration-time: 86400000
